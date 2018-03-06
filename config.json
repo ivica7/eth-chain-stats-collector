@@ -1,0 +1,7 @@
+{
+  "chaindataPath": "../datadir/geth/chaindata",
+
+  "network": "mainnet",  
+  "blockNr": "5200035",
+  "blockStateRootHash": "0x4d675087a16f13fa5f61af74d79e08c82de7cf200e63d5b225b4a7937705a3e2"
+}
