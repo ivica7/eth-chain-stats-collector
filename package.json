@@ -1,0 +1,30 @@
+{
+  "name": "eth-chain-stats-collector",
+  "version": "0.0.1",
+  "description": "A collection of scripts for collecting stats about the Ethereum chain usage.",
+  "main": "dumpContractCreation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivica7/eth-chain-stats-collector.git"
+  },
+  "keywords": [
+    "ethereum"
+  ],
+  "author": "Ivica Aracic",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ivica7/eth-chain-stats-collector/issues"
+  },
+  "homepage": "https://github.com/ivica7/eth-chain-stats-collector#readme",
+  "dependencies": {
+    "ethereumjs-account": "^2.0.4",
+    "ethereumjs-util": "^5.1.5",
+    "leveldown": "^3.0.0",
+    "levelup": "^2.0.2",
+    "merkle-patricia-tree": "^2.3.0",
+    "rlp": "^2.0.0"
+  }
+}
