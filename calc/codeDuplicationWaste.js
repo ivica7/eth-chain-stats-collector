@@ -13,6 +13,7 @@ var aggBytecodeCount = 0;
 var aggBytecodeSizeSum = 0;
 var aggBytecodeWithDuplicatesCount = 0;
 var aggWastedBytes = 0;
+var aggContractsCount = 0;
 
 for(h in map) {
   var v = map[h];
@@ -24,14 +25,17 @@ for(h in map) {
       aggBytecodeWithDuplicatesCount++;
       aggWastedBytes += (v.counter-1)*v.size;
     }
+
+    aggContractsCount += v.counter;
   }
   else {
-    console.log("EOAs?", "counter", v.counter, "Code Hash:", h);
+    console.log("              EOAs:", v.counter);
   }
 }
-
-console.log("             Wasted Bytes:", aggWastedBytes, "/", aggBytecodeSizeSum, "-", aggWastedBytes*100/aggBytecodeSizeSum, "%");
-console.log("Bytecodes with duplicates:", aggBytecodeWithDuplicatesCount, "/", aggBytecodeCount, "-", aggBytecodeWithDuplicatesCount*100/aggBytecodeCount, "%");
-
+console.log("Contract Instances:", aggContractsCount);
+console.log();
+console.log("  Unique Bytecodes");
+console.log("   with duplicates:", aggBytecodeWithDuplicatesCount, "/", aggBytecodeCount, "->", aggBytecodeWithDuplicatesCount*100/aggBytecodeCount, "%");
+console.log("      Bytes Wasted:", aggWastedBytes, "/", aggBytecodeSizeSum, "->", aggWastedBytes*100/aggBytecodeSizeSum, "%");
 var gasWasted = aggWastedBytes * 200;
-console.log("               Gas Wasted:", gasWasted);
+console.log("        Gas Wasted:", gasWasted);
